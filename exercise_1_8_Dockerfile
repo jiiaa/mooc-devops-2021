@@ -1,0 +1,11 @@
+FROM ubuntu:18.04
+
+WORKDIR /usr/src/app
+
+COPY input.sh .
+
+RUN chmod +x input.sh
+
+RUN apt-get update; apt-get install -y curl
+
+CMD ./input.sh
