@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  example-backend:
+    image: backend-project
+    container_name: mooc-backend
+    environment:
+      - REDIS_HOST=redis
+    ports:
+      - "8080:8080"
+  exmaple-frontend:
+    image: frontend-project
+    container_name: mooc-frontend
+    ports:
+      - "5000:5000"
+  redis-storage:
+    image: redis:6-alpine
+    container_name: redis
